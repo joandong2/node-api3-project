@@ -13,8 +13,9 @@ const port = process.env.PORT || 4000;
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
-server.use(userRouter);
-server.use(postRouter);
+
+server.use('/', userRouter);
+server.use('/posts'. postRouter);
 
 server.listen(port, () => {
     console.log(`server started on port ${port}`);
