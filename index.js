@@ -8,11 +8,12 @@ const server = express();
 // This is installing some middleware to allow Express
 // to parse JSON request bodies. We'll go more into detail about this later.
 server.use(express.json());
+const port = process.env.PORT || 4000
 server.use(cors());
 
 server.use(userRouter);
 server.use(postRouter);
 
-server.listen(8080, () => {
+server.listen(port, () => {
     console.log("server started on port 8080");
 });
